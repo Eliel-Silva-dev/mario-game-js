@@ -9,18 +9,20 @@ import PlusRec from '@/shared/components/PlusRec';
 const MenuDesk = () => {
   const hamburguerActive = () => {
     const contHamb = document.getElementById(
-      'container_hamburguer'
+      'container_hamburguer',
     ) as HTMLElement;
-    contHamb.classList.toggle('style_min_active__D38du');
+    contHamb.classList.toggle('style_min_active__EzYf9');
   };
 
   useEffect(() => {
     const menuMobile = document.getElementById(
-      'container_hamburguer'
+      'container_hamburguer',
     ) as HTMLElement;
+
     const masc = document.getElementById('masc') as HTMLElement;
+
     const liList = document.querySelectorAll(
-      '#links li'
+      '#links li',
     ) as NodeListOf<Element>;
 
     menuMobile.addEventListener('click', hamburguerActive);

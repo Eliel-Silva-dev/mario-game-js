@@ -11,7 +11,7 @@ const Footer = () => {
   const year = date.getFullYear();
 
   useEffect(() => {
-    const lsContent = window.localStorage.getItem('lgpd');
+    const lsContent = window.localStorage.getItem('lgpdMario');
 
     if (!lsContent) {
       setLocalStorage(false);

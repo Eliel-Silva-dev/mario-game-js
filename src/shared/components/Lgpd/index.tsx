@@ -2,7 +2,7 @@ import style from './style.min.module.css';
 
 const Lgpd = () => {
   const setLgbd = () => {
-    localStorage.setItem('lgpd', 'confirmado');
+    localStorage.setItem('lgpdMario', 'confirmado');
 
     const lgpdEl = document.getElementById('lgpd') as HTMLElement;
     lgpdEl.remove();
