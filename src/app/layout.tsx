@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 import { Lato } from 'next/font/google';
 
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
+import NavBar from '@/shared/components/NavBar';
+import Footer from '@/shared/components/Footer';
 
 import { Suspense } from 'react';
 
@@ -12,9 +12,9 @@ import './globals.css';
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] });
 
 export const metadata: Metadata = {
-  title: '',
-  description: '',
-  keywords: '',
+  title: 'Jogo Mário-Js | Hydrah Tec',
+  description: 'Jogo Mário desenvolvido em linguagem javascript',
+  keywords: 'Jogo Mario',
   icons: '',
   robots: 'index, follow',
   authors: [{ name: 'Eliel Silva', url: 'https://github.com/Eliel-Silva-dev' }],
