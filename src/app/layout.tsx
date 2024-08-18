@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Jogo Mário-Js | Hydrah Tec',
   description: 'Jogo Mário desenvolvido em linguagem javascript',
   keywords: 'Jogo Mario',
-  icons: '',
+  icons: 'img/mariologo.svg',
   robots: 'index, follow',
   authors: [{ name: 'Eliel Silva', url: 'https://github.com/Eliel-Silva-dev' }],
 };

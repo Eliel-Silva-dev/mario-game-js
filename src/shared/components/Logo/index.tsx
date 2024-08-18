@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import style from './style.min.module.css';
-import { FaCookieBite } from 'react-icons/fa';
+import { FaOdysee } from 'react-icons/fa6';
 
 const Logo = () => {
   return (
     <div id={style.logo_title}>
-      <FaCookieBite />
+      <FaOdysee />
       <h2>
-        <Link href={'/'}>Padaria Vó Rosa</Link>
+        <Link href={'/'}>Mário-js</Link>
       </h2>
     </div>
   );
