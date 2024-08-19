@@ -1,3 +1,74 @@
 #main_home h2 {
   font-size: 3rem;
 }
+.game_board {/*area do game*/
+ background: linear-gradient(#07ceeb, #e6f6ff);
+ position: relative;
+ overflow: hidden;
+ border-bottom: 15px solid rgb(32, 141, 32);
+ height: 80vh;
+ width: 100%;
+}
+
+#mario{
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+.jump {
+  animation: marioMove 1.5s infinite  linear;
+}
+#pipe{
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  animation: pipeMove 2s infinite  linear;
+}
+#clounds{
+  width: 400px;
+  position: absolute;
+  top: 0;
+  animation: clounds_move 20s infinite  linear;
+}
+.parede{
+  height: 20vh;
+  background-image: url('/img/paredemario.png');
+  background-repeat: repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+@keyframes clounds_move {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes pipeMove {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@keyframes marioMove {
+  0% {
+    bottom: 0px;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
