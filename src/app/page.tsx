@@ -9,25 +9,25 @@ export default function Home() {
   const pipe = useRef({} as HTMLImageElement);
   const gameBoard = useRef({} as HTMLDivElement);
 
-  useEffect(() => {
-    const jumpArrowup = (e: KeyboardEvent) => {
-      if (e.key == 'ArrowUp') {
-        mario.current.classList.add('page_jump__Ry29I');
-
-        setTimeout(() => {
-          mario.current.classList.remove('page_jump__Ry29I');
-        }, 600);
-      }
-    };
-
-    const jumpClickMouse = () => {
+  const jumpArrowup = (e: KeyboardEvent) => {
+    if (e.key == 'ArrowUp') {
       mario.current.classList.add('page_jump__Ry29I');
 
       setTimeout(() => {
         mario.current.classList.remove('page_jump__Ry29I');
       }, 600);
-    };
+    }
+  };
 
+  const jumpClickMouse = () => {
+    mario.current.classList.add('page_jump__Ry29I');
+
+    setTimeout(() => {
+      mario.current.classList.remove('page_jump__Ry29I');
+    }, 600);
+  };
+
+  useEffect(() => {
     document.addEventListener('keydown', jumpArrowup);
 
     document.addEventListener('click', jumpClickMouse);
@@ -39,7 +39,7 @@ export default function Home() {
       );
       const pipeLeft = pipe.current.offsetLeft;
 
-      if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 90) {
+      if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
         pipe.current.style.animation = 'none';
         pipe.current.style.left = `${pipeLeft}px`;
 
