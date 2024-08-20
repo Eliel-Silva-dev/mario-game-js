@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 import styles from './page.module.css';
 
 export default function Home() {
-  // class jump: page_jump__Ry29I
   const mario = useRef({} as HTMLImageElement);
   const pipe = useRef({} as HTMLImageElement);
   const gameBoard = useRef({} as HTMLDivElement);
