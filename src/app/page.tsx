@@ -32,17 +32,30 @@ export default function Home() {
 
     document.addEventListener('click', jumpClickMouse);
 
+    const gameOver = () => {
+      const marioTop = +getComputedStyle(mario.current).bottom.replace(
+        'px',
+        '',
+      );
+      const pipeLeft = pipe.current.offsetLeft;
+
+      if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 90) {
+        pipe.current.style.animation = 'none';
+        pipe.current.style.left = `${pipeLeft}px`;
+
+        mario.current.style.bottom = `${marioTop}px`;
+
+        document.removeEventListener('keydown', jumpArrowup);
+
+        document.removeEventListener('click', jumpClickMouse);
+
+        clearInterval(loopMario);
+      }
+    };
+
     const loopMario = setInterval(() => {
-      const marioTop = getComputedStyle(mario.current).bottom.replace(
-        'px',
-        '',
-      );
-      const pipeLeft = getComputedStyle(mario.current).left.replace(
-        'px',
-        '',
-      );
-    }, 1000);
-    //clearInterval(loopMario);
+      gameOver();
+    }, 10);
   }, []);
 
   return (
