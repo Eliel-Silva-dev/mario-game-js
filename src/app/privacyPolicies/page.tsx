@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import style from './style.min.module.css';
 
-const PoliticaPriv = () => {
+const PrivacyPolicies = () => {
   const nameSite = 'Mario js';
   return (
-    <main className={style.politicaPrev}>
-      <section className={style.politic}>
+    <main className={style.privacyPolicies}>
+      <section className={style.privacy}>
         <h2>Política Privacidade</h2>
         <p>
           A sua privacidade é importante para nós. É política do {nameSite}{' '}
@@ -22,8 +22,8 @@ const PoliticaPriv = () => {
         <p>
           Apenas retemos as informações coletadas pelo tempo necessário para
           fornecer o serviço solicitado. Quando armazenamos dados, protegemos
-          dentro de meios comercialmente aceitáveis ​​para evitar perdas e
-          roubos, bem como acesso, divulgação, cópia, uso ou modificação não
+          dentro de meios comercialmente aceitáveis para evitar perdas e roubos,
+          bem como acesso, divulgação, cópia, uso ou modificação não
           autorizados.
         </p>
         <p>
@@ -61,7 +61,7 @@ const PoliticaPriv = () => {
           <li>
             Utilizamos anúncios para compensar os custos de funcionamento deste
             site e fornecer financiamento para futuros desenvolvimentos. Os
-            cookies de publicidade comportamental usados ​​por este site foram
+            cookies de publicidade comportamental usados por este site foram
             projetados para garantir que você forneça os anúncios mais
             relevantes sempre que possível, rastreando anonimamente seus
             interesses e apresentando coisas semelhantes que possam ser do seu
@@ -113,4 +113,4 @@ const PoliticaPriv = () => {
   );
 };
 
-export default PoliticaPriv;
+export default PrivacyPolicies;

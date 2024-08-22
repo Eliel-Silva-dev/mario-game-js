@@ -22,8 +22,8 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <p>
-        <Link href={'/politicaPriv'}>Politica de privacidade</Link> -{' '}
-        <Link href={'/termsService'}>Termos de uso</Link>
+        <Link href={'/privacyPolicies'}>Politica de privacidade</Link> -{' '}
+        <Link href={'/termsUse'}>Termos de uso</Link>
       </p>
       <p>Desenvolvido por Hydrah Tecnologia</p>
       <p>&#9400; Todos os direitos reservados - {year}</p>
