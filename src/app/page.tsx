@@ -12,12 +12,19 @@ export default function Home() {
   const loopId = useRef<NodeJS.Timeout>();
   const [score, setScore] = useState<number>(0);
 
+  const incrementScore = () => {
+    setScore((oldScore) => {
+      return oldScore + 10;
+    });
+  };
+
   const jumpArrowup = (e: KeyboardEvent) => {
     if (e.key == 'ArrowUp') {
       mario.current.classList.add('page_jump__Ry29I');
 
       setTimeout(() => {
         mario.current.classList.remove('page_jump__Ry29I');
+        incrementScore();
       }, 500);
     }
   };
@@ -27,14 +34,10 @@ export default function Home() {
 
     setTimeout(() => {
       mario.current.classList.remove('page_jump__Ry29I');
-    }, 600);
+      incrementScore();
+    }, 500);
   };
 
-  const incrementScore = () => {
-    setScore((oldScore) => {
-      return oldScore + 10;
-    });
-  };
   const gameOver = (marioTop: number) => {
     clearInterval(loopId.current);
 
@@ -75,9 +78,6 @@ export default function Home() {
         gameOver(marioTop);
         return;
       }
-      if (marioTop > 195) {
-        incrementScore();
-      }
     }, 10);
   };
 
@@ -102,9 +102,6 @@ export default function Home() {
             <h2>
               Pontuação:{' '}
               <span className={styles.score}>{score ? score : '00'}</span>
-            </h2>
-            <h2>
-              Tempo: <span className={styles.score}>00:00</span>
             </h2>
           </div>
           <button onClick={play} type="button">
