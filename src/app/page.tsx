@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef, useState } from 'react';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
   const gameBoard = useRef({} as HTMLDivElement);
   const boxPlay = useRef({} as HTMLDivElement);
   const loopId = useRef<NodeJS.Timeout>();
+  const [score, setScore] = useState<number>(0);
 
   const jumpArrowup = (e: KeyboardEvent) => {
     if (e.key == 'ArrowUp') {
@@ -29,6 +30,11 @@ export default function Home() {
     }, 600);
   };
 
+  const incrementScore = () => {
+    setScore((oldScore) => {
+      return +oldScore + 10;
+    });
+  };
   const gameOver = (marioTop: number) => {
     clearInterval(loopId.current);
 
@@ -64,6 +70,10 @@ export default function Home() {
       const pipeLeft = pipe.current.offsetLeft;
       if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
         gameOver(marioTop);
+        return;
+      }
+      if (pipeLeft < 20) {
+        incrementScore();
       }
     }, 10);
   };
@@ -80,8 +90,16 @@ export default function Home() {
           alt="nuvens"
         />
         <div ref={boxPlay} id={styles.play}>
+          <div>
+            <h2>
+              Pontuação: <span className={styles.score}>{score || '00'}</span>
+            </h2>
+            <h3>
+              Tempo de jogo: <span className={styles.score}>00:00</span>
+            </h3>
+          </div>
           <button onClick={play} type="button">
-            Play
+            Novo jogo
           </button>
         </div>
       </div>
