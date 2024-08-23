@@ -1,43 +1,70 @@
 #main_home h2 {
   font-size: 3rem;
 }
-.game_board {/*area do game*/
- background: linear-gradient(#07ceeb, #e6f6ff);
- position: relative;
- overflow: hidden;
- border-bottom: 15px solid rgb(32, 141, 32);
- height: 80vh;
- width: 100%;
+.game_board {
+  /*area do game*/
+  background: linear-gradient(#07ceeb, #e6f6ff);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 15px solid rgb(32, 141, 32);
+  height: 80vh;
+  width: 100%;
 }
 
-#mario{
+#mario {
   width: 150px;
   position: absolute;
   bottom: 0;
 }
 .jump {
-  animation: marioMove 600ms infinite  linear;
+  animation: marioMove 600ms infinite linear;
 }
-#pipe{
+#pipe {
   width: 80px;
   position: absolute;
   bottom: 0;
-  animation: pipeMove 1.5s infinite  linear;
+  right: -200px;
 }
-#clounds{
+.animaPipe {
+  animation: pipeMove 1.5s infinite linear;
+}
+#clounds {
   width: 400px;
   position: absolute;
   top: 0;
-  animation: clounds_move 20s infinite  linear;
+  right: -500px;
 }
-.parede{
+.animaClouds {
+  animation: clounds_move 20s infinite linear;
+}
+.parede {
   height: 20vh;
   background-image: url('/img/paredemario.png');
   background-repeat: repeat;
   background-position: left;
   background-size: contain;
 }
+#play{
+  height: 200px;
+  width: 200px;
+  background-color: rgba(0, 0, 255, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  left: 0;
 
+}
+#play button {
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
+  font-size: 2rem;
+  background-color: var(--secondary_color);
+}
 @keyframes clounds_move {
   0% {
     right: -500px;
