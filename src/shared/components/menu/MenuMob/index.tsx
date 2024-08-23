@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import style from './style.min.module.css';
 
 import Link from 'next/link';
-import PlusRec from '@/shared/components/PlusRec';
+import Button from '../../buttons/Button';
 
 const MenuDesk = () => {
   const hamburguerActive = () => {
@@ -42,17 +42,15 @@ const MenuDesk = () => {
         <li>
           <Link href={'/'}>Inicio</Link>
         </li>
-        <li>
-          <Link href={'/ofertas'}>Ofertas</Link>
-        </li>
-        <li>
-          <Link href={'/menu'}>Menu</Link>
-        </li>
-        <li>
-          <Link href={'/sobre'}>Sobre</Link>
-        </li>
         <li id={style.plus}>
-          <PlusRec />
+          <Button>
+            <Link
+              href={'https://portfolio-frontend-eliel-silva.vercel.app/'}
+              target="_blank"
+            >
+              + jogos
+            </Link>
+          </Button>
         </li>
       </ul>
     </div>
