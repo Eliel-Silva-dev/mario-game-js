@@ -75,8 +75,7 @@ export default function Home() {
         gameOver(marioTop);
         return;
       }
-      if (pipeLeft < 20 && pipeLeft > 16) {
-        console.log(pipeLeft);
+      if (marioTop > 195) {
         incrementScore();
       }
     }, 10);
