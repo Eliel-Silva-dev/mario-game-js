@@ -56,6 +56,7 @@
   width: 100%;
   top: 30%;
   left: 0;
+  gap: 15px;
 
 }
 #play button {
@@ -64,6 +65,23 @@
   border-radius: 10%;
   font-size: 2rem;
   background-color: var(--secondary_color);
+  cursor: pointer;
+}
+.score {
+  color: var(--secondary_color);
+  font-size: 2rem;
+  background-color: #e6f6ff;
+  border: 1px solid var(--secondary_color);
+  padding: 3px 5px;
+  width: 100%;
+
+}
+#boxScore {
+  position: absolute;
+  right: 30px;
+}
+#boxScore h2 {
+  font-size: 2rem;
 }
 @keyframes clounds_move {
   0% {

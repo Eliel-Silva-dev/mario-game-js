@@ -32,7 +32,7 @@ export default function Home() {
 
   const incrementScore = () => {
     setScore((oldScore) => {
-      return +oldScore + 10;
+      return oldScore + 10;
     });
   };
   const gameOver = (marioTop: number) => {
@@ -58,6 +58,8 @@ export default function Home() {
     boxPlay.current.style.display = 'none';
     mario.current.style.bottom = '0';
 
+    setScore(0);
+
     document.addEventListener('keydown', jumpArrowup);
 
     document.addEventListener('click', jumpClickMouse);
@@ -67,12 +69,14 @@ export default function Home() {
         'px',
         '',
       );
+
       const pipeLeft = pipe.current.offsetLeft;
       if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
         gameOver(marioTop);
         return;
       }
-      if (pipeLeft < 20) {
+      if (pipeLeft < 20 && pipeLeft > 16) {
+        console.log(pipeLeft);
         incrementScore();
       }
     }, 10);
@@ -81,6 +85,11 @@ export default function Home() {
   return (
     <main id={styles.main_home}>
       <div ref={gameBoard} className={styles.game_board}>
+        <div id={styles.boxScore}>
+          <h2>
+            Score: <span className={styles.score}>{score ? score : '00'}</span>
+          </h2>
+        </div>
         <img id={styles.mario} src="img/mario.gif" alt="mario" ref={mario} />
         <img ref={pipe} id={styles.pipe} src="img/pipe.png" alt="tubo" />
         <img
@@ -92,11 +101,12 @@ export default function Home() {
         <div ref={boxPlay} id={styles.play}>
           <div>
             <h2>
-              Pontuação: <span className={styles.score}>{score || '00'}</span>
+              Pontuação:{' '}
+              <span className={styles.score}>{score ? score : '00'}</span>
             </h2>
-            <h3>
-              Tempo de jogo: <span className={styles.score}>00:00</span>
-            </h3>
+            <h2>
+              Tempo: <span className={styles.score}>00:00</span>
+            </h2>
           </div>
           <button onClick={play} type="button">
             Novo jogo
