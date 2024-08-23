@@ -29,6 +29,23 @@ export default function Home() {
     }, 600);
   };
 
+  const gameOver = (marioTop: number) => {
+    clearInterval(loopId.current);
+
+    document.removeEventListener('keydown', jumpArrowup);
+
+    document.removeEventListener('click', jumpClickMouse);
+
+    clouds.current.classList.remove('page_animaClouds__GRyvg');
+    pipe.current.classList.remove('page_animaPipe__vfR2_');
+
+    mario.current.style.bottom = `${marioTop}px`;
+    clouds.current.style.right = '-500px';
+    pipe.current.style.right = '-200px';
+
+    boxPlay.current.style.display = 'flex';
+  };
+
   const play = () => {
     pipe.current.classList.add('page_animaPipe__vfR2_');
     clouds.current.classList.add('page_animaClouds__GRyvg');
@@ -38,37 +55,18 @@ export default function Home() {
     document.addEventListener('keydown', jumpArrowup);
 
     document.addEventListener('click', jumpClickMouse);
-  };
-
-  const gameOver = () => {
-    const marioTop = +getComputedStyle(mario.current).bottom.replace('px', '');
-    const pipeLeft = pipe.current.offsetLeft;
-
-    if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
-      document.removeEventListener('keydown', jumpArrowup);
-
-      document.removeEventListener('click', jumpClickMouse);
-
-      clouds.current.classList.remove('page_animaClouds__GRyvg');
-      pipe.current.classList.remove('page_animaPipe__vfR2_');
-
-      mario.current.style.bottom = `${marioTop}px`;
-      clouds.current.style.right = '-500px';
-      pipe.current.style.right = '-200px';
-
-      boxPlay.current.style.display = 'flex';
-
-      clearInterval(loopId.current);
-    }
 
     loopId.current = setInterval(() => {
-      gameOver();
-    }, 50);
+      const marioTop = +getComputedStyle(mario.current).bottom.replace(
+        'px',
+        '',
+      );
+      const pipeLeft = pipe.current.offsetLeft;
+      if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
+        gameOver(marioTop);
+      }
+    }, 10);
   };
-
-  useEffect(() => {
-    gameOver();
-  }, []);
 
   return (
     <main id={styles.main_home}>
