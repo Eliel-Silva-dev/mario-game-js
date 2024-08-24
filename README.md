@@ -1,15 +1,14 @@
 # Projeto mario-game-js
 
-Jogo Mário desenvolvido em javascript.
+Jogo Mário desenvolvido em react app com next e typescript.
 
-[Visitar site]()
+[Visitar site](https://mario-game-react-app.vercel.app/)
 
 ### Lista com as funcionalidades:
 
-- [x]
-- [x]
-- [x]
-- [x]
+- [x] identificador de colisão;
+- [x] incremento da pontuação durante o jogo;
+- [x] Implementação da LGPD;
 
 ## 🔧 Instalação
 
@@ -53,10 +52,8 @@ E com as bibliotecas:
 
 ## Próximos passos
 
-- [ ] implementar lazyload;
-- [ ] implementar tema light / dark;
-- [ ] Implementação da LGPD;
-- [ ] ;
+- [ ] implementar histórico de pontuações;
+- [ ] implementar itens especiais para coletar no jogo;
 
 ## ✒️ Autor
 
