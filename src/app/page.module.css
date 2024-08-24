@@ -17,7 +17,7 @@
   bottom: 0;
 }
 .jump {
-  animation: marioMove 600ms infinite linear;
+  animation: marioMove 600ms infinite ease-out;
 }
 #pipe {
   width: 80px;
