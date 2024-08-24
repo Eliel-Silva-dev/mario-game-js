@@ -60,6 +60,12 @@ export default function Home() {
     clouds.current.classList.add('page_animaClouds__GRyvg');
     boxPlay.current.style.display = 'none';
     mario.current.style.bottom = '0';
+    const audio = new Audio('assets/mario.ogg');
+    audio?.play();
+
+    if (audio.ended) {
+      audio?.play();
+    }
 
     setScore(0);
 
@@ -76,7 +82,7 @@ export default function Home() {
       const pipeLeft = pipe.current.offsetLeft;
       if (pipeLeft < 120 && pipeLeft > 20 && marioTop < 110) {
         gameOver(marioTop);
-        return;
+        audio?.pause();
       }
     }, 10);
   };
