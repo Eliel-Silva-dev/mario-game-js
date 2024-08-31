@@ -12,7 +12,7 @@
 }
 
 #mario {
-  width: 150px;
+  width: 130px;
   position: absolute;
   bottom: 0;
 }
@@ -20,7 +20,7 @@
   animation: marioMove 600ms infinite ease-out;
 }
 #pipe {
-  width: 80px;
+  width: 50px;
   position: absolute;
   bottom: 0;
   right: -200px;
@@ -29,7 +29,7 @@
   animation: pipeMove 1.5s infinite linear;
 }
 #clounds {
-  width: 400px;
+  max-width: 400px;
   position: absolute;
   top: 0;
   right: -500px;
