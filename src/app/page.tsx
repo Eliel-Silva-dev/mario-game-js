@@ -80,7 +80,7 @@ export default function Home() {
       );
 
       const pipeLeft = pipe.current.offsetLeft;
-      if (pipeLeft < 100 && pipeLeft > 20 && marioTop < 110) {
+      if (pipeLeft < 100 && pipeLeft > 10 && marioTop < 100) {
         gameOver(marioTop);
         audio?.pause();
       }
